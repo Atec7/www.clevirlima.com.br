@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clevir Lima Moda Íntima</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #4b0c0c;
+      color: #ffffff;
+    }
+
+    header {
+      background-color: #5c1515;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+  margin: 0;
+  font-family: 'Cinzel', serif;
+  color: #ffffff;
+  font-size: 30px;
+}
+
+
+    nav {
+      text-align: center;
+      background-color: #1a1a1a;
+      padding: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .cart-count {
+      background-color: red;
+      color: white;
+      border-radius: 50%;
+      padding: 2px 6px;
+      font-size: 12px;
+      position: absolute;
+      top: -8px;
+      right: -12px;
+    }
+
+    .search-bar {
+      text-align: center;
+      margin: 20px;
+    }
+
+    .search-bar input {
+      padding: 10px;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+    }
+
+    .container {
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .produto {
+      background-color: #3a0000;
+      margin: 15px;
+      padding: 15px;
+      border-radius: 8px;
+      width: 300px;
+    }
+
+    .produto h3 {
+      margin-top: 10px;
+    }
+
+    .slider {
+      position: relative;
+      overflow: hidden;
+      height: 250px;
+      border-radius: 8px;
+    }
+
+    .slider img {
+      width: 100%;
+      display: none;
+      cursor: pointer;
+    }
+
+    .slider img.active {
+      display: block;
+    }
+
+    .slider-buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    .slider-buttons button {
+      background-color: rgba(0, 0, 0, 0.6);
+      border: none;
+      color: white;
+      font-size: 20px;
+      padding: 5px 10px;
+      cursor: pointer;
+      pointer-events: auto;
+      border-radius: 5px;
+    }
+
+    .botao {
+      background-color: #b30000;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      margin-top: 10px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #1a1a1a;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .modal img {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 90%;
+      margin-top: 5%;
+    }
+
+    .formulario {
+      display: none;
+      padding: 20px;
+      background-color: #3a0000;
+      margin-top: 20px;
+      border-radius: 8px;
+    }
+
+    .formulario input, .formulario textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+    }
+
+    .formulario button {
+      background-color: #b30000;
+      color: white;
+      padding: 12px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
+    .logo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid white;
+  position: relative;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 15px 15px rgba(255, 0, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.8);
+  }
+}
+
+    p{
+      font-family: 'Cinzel', serif;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src = "logo3.jpg" class="logo">
+<p>
+  <i class="fas fa-lock"></i> Compra Segura<br>
+  <i class="fas fa-box"></i> Entrega Discreta<br>
+  <i class="fas fa-motorcycle"></i> <span style="font-size: 0.9em;">Entrega
+  grátis em RV-GO a partir R$100
+</span>
+</p>
+
+
+
+  </header>
+<div id="aviso-maioridade" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.95); color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 10000; padding: 30px; text-align: center; box-sizing: border-box;">
+  <div style="max-width: 600px; width: 100%;">
+    <h2 style="font-size: 2em; margin-bottom: 20px;">Bem-vindo à <br> <b>Clevir
+    Lima <br></b> Moda Íntima!</h2>
+    <p style="font-size: 1.2em; margin-bottom: 30px;">
+      Este site contém produtos sensuais e eróticos, destinados exclusivamente a pessoas maiores de 18 anos. Ao continuar, você declara ser maior de idade.
+    </p>
+    <button onclick="liberarSite()" style="background-color: #b30000; color: white; padding: 12px 25px; font-size: 16px; border: none; border-radius: 6px; cursor: pointer;">Tenho mais de 18 anos</button>
+  </div>
+</div>
+
+
+  <nav>
+    <a href="#produtos">Produtos</a>
+    <a href="#carrinho">Carrinho <span id="contador" class="cart-count">0</span></a>
+    <a href="#sobre">Sobre</a>
+  </nav>
+
+  <div class="search-bar">
+    <input type="text" id="busca" placeholder="Buscar produto..." onkeyup="filtrarProdutos()" />
+  </div>
+
+  <div class="container" id="produtos">
+    <!-- Produto 1 -->
+    <div class="produto" data-nome="Conjunto Sensual Luxo" data-preco="89.90" data-codigo="CSL001">
+      <div class="slider">
+        <img src="01.jpg" class="active" onclick="abrirModal(this)" />
+        <img src="001.jpg" onclick="abrirModal(this)" />
+        <img src="0001.jpg" onclick="abrirModal(this)" />
+        <div class="slider-buttons">
+          <button onclick="mudarImagem(this, -1)">‹</button>
+          <button onclick="mudarImagem(this, 1)">›</button>
+        </div>
+      </div>
+      <h3>Conjunto Sensual Luxo</h3>
+      <p>Conjunto vermelho escarlate com renda delicada.</p>
+      <p><strong>Código:</strong> CSL001</p>
+      <p><strong>Preço:</strong> R$ 89,90</p>
+      <button class="botao" onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+    </div>
+
+    <!-- Produto 2 -->
+    <div class="produto" data-nome="Gel Excitante Morango" data-preco="29.90" data-codigo="GEM002">
+      <div class="slider">
+        <img src="02.jpg" class="active" onclick="abrirModal(this)" />
+        <img src="002.jpg" onclick="abrirModal(this)" />
+        <img src="0002.jpg" onclick="abrirModal(this)" />
+        <div class="slider-buttons">
+          <button onclick="mudarImagem(this, -1)">‹</button>
+          <button onclick="mudarImagem(this, 1)">›</button>
+        </div>
+      </div>
+      <h3>Gel Excitante Morango</h3>
+      <p>Experiência quente e saborosa.</p>
+      <p><strong>Código:</strong> GEM002</p>
+      <p><strong>Preço:</strong> R$ 29,90</p>
+      <button class="botao" onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+    </div>
+  </div>
+
+  <div class="container" id="carrinho">
+    <h2>Seu Carrinho</h2>
+    <ul id="lista-carrinho"></ul>
+    <button class="botao" onclick="mostrarFormulario()">Finalizar Pedido</button>
+
+    <div class="formulario" id="formulario-pedido">
+      <h3>Finalizar Pedido</h3>
+      <input type="text" placeholder="Nome Completo" required />
+      <input type="tel" placeholder="Telefone ou WhatsApp" required />
+      <input type="email" placeholder="E-mail" required />
+      <textarea placeholder="Endereço para entrega" required></textarea>
+      <button type="button" onclick="enviarPedido()">Enviar Pedido</button>
+    </div>
+  </div>
+
+  <div class="container" id="sobre">
+    <h2>Sobre a <b>Clevir Lima</b> 
+    <br>Moda Íntima</h2>
+    <p>
+      Marca apaixonada por empoderar através da sensualidade. Produtos de alta qualidade
+      pensados para proporcionar prazer, conforto e elegância.
+    </p>
+  </div>
+
+  <footer>
+    <p>© 2025 Clevir Moda Íntima. Todos os direitos reservados.</p>
+    <br>
+    <p>www.clevirlima.com.br</p>
+  </footer>
+
+  <div class="modal" id="modal" onclick="fecharModal()">
+    <img id="modal-img" />
+  </div>
+
+  <script>
+    function mudarImagem(botao, direcao) {
+      const slider = botao.closest(".slider");
+      const imagens = slider.querySelectorAll("img");
+      let indexAtual = Array.from(imagens).findIndex(img => img.classList.contains("active"));
+      imagens[indexAtual].classList.remove("active");
+      let novoIndex = (indexAtual + direcao + imagens.length) % imagens.length;
+      imagens[novoIndex].classList.add("active");
+    }
+
+    function abrirModal(img) {
+      const modal = document.getElementById('modal');
+      const modalImg = document.getElementById('modal-img');
+      modalImg.src = img.src;
+      modal.style.display = "block";
+    }
+
+    function fecharModal() {
+      document.getElementById('modal').style.display = "none";
+    }
+
+    function filtrarProdutos() {
+      const termo = document.getElementById("busca").value.toLowerCase();
+      document.querySelectorAll(".produto").forEach(prod => {
+        prod.style.display = prod.getAttribute("data-nome").toLowerCase().includes(termo) ? "block" : "none";
+      });
+    }
+
+    let carrinho = [];
+
+    function adicionarAoCarrinho(botao) {
+      const produtoDiv = botao.closest('.produto');
+      const nome = produtoDiv.getAttribute('data-nome');
+      const preco = parseFloat(produtoDiv.getAttribute('data-preco'));
+      const codigo = produtoDiv.getAttribute('data-codigo');
+
+      const existente = carrinho.find(p => p.nome === nome);
+      if (existente) {
+        existente.quantidade++;
+      } else {
+        carrinho.push({ nome, preco, codigo, quantidade: 1 });
+      }
+      atualizarCarrinho();
+    }
+
+    function atualizarCarrinho() {
+      const lista = document.getElementById("lista-carrinho");
+      lista.innerHTML = "";
+      carrinho.forEach(item => {
+        const li = document.createElement("li");
+        const subtotal = (item.preco * item.quantidade).toFixed(2);
+        li.textContent = `${item.nome} (Código: ${item.codigo}) - R$ ${item.preco.toFixed(2)} x ${item.quantidade} = R$ ${subtotal}`;
+        lista.appendChild(li);
+      });
+      document.getElementById("contador").textContent = carrinho.reduce((acc, item) => acc + item.quantidade, 0);
+    }
+
+    function mostrarFormulario() {
+      document.getElementById("formulario-pedido").style.display = "block";
+    }
+
+    function enviarPedido() {
+      const nome = document.querySelector('#formulario-pedido input[placeholder="Nome Completo"]').value;
+      const telefone = document.querySelector('#formulario-pedido input[placeholder="Telefone ou WhatsApp"]').value;
+      const email = document.querySelector('#formulario-pedido input[placeholder="E-mail"]').value;
+      const endereco = document.querySelector('#formulario-pedido textarea').value;
+
+      if (!nome || !telefone || !email || !endereco || carrinho.length === 0) {
+        alert("Por favor, preencha todos os campos e adicione ao menos um produto ao carrinho.");
+        return;
+      }
+
+      let total = 0;
+      const listaProdutos = carrinho.map((item, i) => {
+        const subtotal = item.preco * item.quantidade;
+        total += subtotal;
+        return `*${i + 1}.* ${item.nome} (Código: ${item.codigo})\nQtd: ${item.quantidade}\nPreço unitário: R$ ${item.preco.toFixed(2)}\nSubtotal: R$ ${subtotal.toFixed(2)}`;
+      }).join('\n\n');
+
+      const mensagem = `💋 *Clevir Lima - Pedido Novo!*\n\n🧑‍💼 *Cliente:* ${nome}\n📞 *Telefone:* ${telefone}\n✉️ *E-mail:* ${email}\n🏠 *Endereço:* ${endereco}\n\n🛍️ *Produtos escolhidos:*\n${listaProdutos}\n\n💰 *Valor Total:* R$ ${total.toFixed(2)}\n\n✨ Obrigado por comprar com a gente! Entraremos em contato para finalizar seu atendimento com carinho.`;
+
+      const telefoneLoja = '5564993139906';
+      const link = `https://wa.me/${telefoneLoja}?text=${encodeURIComponent(mensagem)}`;
+      window.open(link, '_blank');
+    }
+  </script>
+<script>
+  function liberarSite() {
+    document.getElementById("aviso-maioridade").style.display = "none";
+  }
+
+  // Impede interação com o conteúdo até o aviso ser aceito
+  document.addEventListener("DOMContentLoaded", () => {
+    document.body.style.overflow = "hidden";
+    const checkInterval = setInterval(() => {
+      if (document.getElementById("aviso-maioridade").style.display === "none") {
+        document.body.style.overflow = "auto";
+        clearInterval(checkInterval);
+      }
+    }, 100);
+  });
+</script>
+
+</body>
+</html>
+      
