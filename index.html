@@ -7,7 +7,7 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Clevir Lima Moda Íntima</title>
+  <title>Clevir Moda Íntima</title>
   <style>
     body {
       margin: 0;
@@ -221,7 +221,7 @@
 <body>
 
   <header>
-    <img src = "logo3.jpg" class="logo">
+    <img src = "img/logo3.jpg" class="logo">
 <p>
   <i class="fas fa-lock"></i> Compra Segura<br>
   <i class="fas fa-box"></i> Entrega Discreta<br>
@@ -229,7 +229,66 @@
   grátis em RV-GO a partir R$100
 </span>
 </p>
+<div style="text-align: center;">
+  <button style="margin: 5px; padding: 10px 20px; border: none; background-color: #8B0000; color: white; font-size: 16px; border-radius: 5px; cursor: pointer;">
+    <i class="fas fa-star" style="color: white;"></i> Sex Shop
+  </button>
+  <button style="margin: 5px; padding: 10px 20px; border: none; background-color: #8B0000; color: white; font-size: 16px; border-radius: 5px; cursor: pointer;">
+    <i class="fas fa-star" style="color: white;"></i> Langeries
+  </button>
+  <button style="margin: 5px; padding: 10px 20px; border: none; background-color: #8B0000; color: white; font-size: 16px; border-radius: 5px; cursor: pointer;">
+    <i class="fas fa-star" style="color: white;"></i> Íntimos
+  </button>
+  <button style="margin: 5px; padding: 10px 20px; border: none; background-color: #8B0000; color: white; font-size: 16px; border-radius: 5px; cursor: pointer;">
+    <i class="fas fa-star" style="color: white;"></i> Calcinhas
+  </button>
+  <button style="margin: 5px; padding: 10px 20px; border: none; background-color: #8B0000; color: white; font-size: 16px; border-radius: 5px; cursor: pointer;">
+    <i class="fas fa-star" style="color: white;"></i> Eróticos
+  </button>
+  <button class="magic-button" onclick="window.open('https://chat.whatsapp.com/CP4GFJeCLJQA1pdOjATJuq', '_blank')">
+  <i class="fab fa-whatsapp"></i> Grupo Vip
+</button>
 
+<style>
+.magic-button {
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  background-color: gold;
+  color: #8B0000; /* Vermelho escuro */
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 15px gold;
+  animation: floating 2s infinite alternate ease-in-out;
+}
+
+.magic-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.7), transparent);
+  animation: magic-glow 3s linear infinite;
+}
+
+@keyframes floating {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-5px); }
+}
+
+@keyframes magic-glow {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+</style>
+</div>
 
 
   </header>
@@ -259,9 +318,9 @@
     <!-- Produto 1 -->
     <div class="produto" data-nome="Conjunto Sensual Luxo" data-preco="89.90" data-codigo="CSL001">
       <div class="slider">
-        <img src="01.jpg" class="active" onclick="abrirModal(this)" />
-        <img src="001.jpg" onclick="abrirModal(this)" />
-        <img src="0001.jpg" onclick="abrirModal(this)" />
+        <img src="img/01.jpg" class="active" onclick="abrirModal(this)" />
+        <img src="img/001.jpg" onclick="abrirModal(this)" />
+        <img src="img/0001.jpg" onclick="abrirModal(this)" />
         <div class="slider-buttons">
           <button onclick="mudarImagem(this, -1)">‹</button>
           <button onclick="mudarImagem(this, 1)">›</button>
@@ -277,9 +336,9 @@
     <!-- Produto 2 -->
     <div class="produto" data-nome="Gel Excitante Morango" data-preco="29.90" data-codigo="GEM002">
       <div class="slider">
-        <img src="02.jpg" class="active" onclick="abrirModal(this)" />
-        <img src="002.jpg" onclick="abrirModal(this)" />
-        <img src="0002.jpg" onclick="abrirModal(this)" />
+        <img src="img/02.jpg" class="active" onclick="abrirModal(this)" />
+        <img src="img/002.jpg" onclick="abrirModal(this)" />
+        <img src="img/0002.jpg" onclick="abrirModal(this)" />
         <div class="slider-buttons">
           <button onclick="mudarImagem(this, -1)">‹</button>
           <button onclick="mudarImagem(this, 1)">›</button>
@@ -431,5 +490,5 @@
 </script>
 
 </body>
-</html>
-      
+    </html>
+    
